@@ -1,0 +1,32 @@
+imc: 11.10-s058: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+
+Starting batch mode
+imc> ls
+cov_work
+imc.key
+imc.log
+imc> merge -out merge_dir -metrics block cov_work/scope/test_sv5678 cov_work/scope/test_sv5679
+Merging IUS Coverage ...
+----------------------------
+Preparing target model ...
+Reading model of primary run (cov_work/scope/test_sv5678) as initial model: cov_work/scope/icc_3adeaf8c_692b1171.ucm 
+Target model generated successfully.
+
+Projecting ICC ucd data into the target model ...
+cov_work/scope/test_sv5678:
+  Data is projected in to the target model.
+cov_work/scope/test_sv5679:
+    "testbench.u_monitor" to "testbench.u_monitor": Block coverage not merged - Checksum differs.
+  Data is projected in to the target model.
+
+Writing output database cov_work/scope/merge_dir:
+  Model: cov_work/scope/merge_dir/icc_3adeaf8c_692b1171.ucm
+  Data : cov_work/scope/merge_dir/icc_3adeaf8c_692b1171.ucd
+No Specman coverage databases found in the runs.
+Total conflicts during target model creation: 0
+Total items not merged                      : 1
+List of conflicts non-merged items during target model creation report only when merge is run with "-message 1" option.
+imc> ls
+cov_work
+imc.key
+imc.log

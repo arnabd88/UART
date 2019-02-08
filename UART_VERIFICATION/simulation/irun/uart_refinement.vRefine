@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<rules>
+<rule ccType="type-tree-root" entityName="type-tree-root/Assertion" entityType="metrics" name="exclude" recursiveMetrics="assertion"/>
+<rule ccType="type" entityName="testbench" name="exclude"/>
+<rule ccType="type" entityName="monitor" name="exclude"/>
+<rule ccType="type" entityName="Uart_Clock_Module" name="exclude"/>
+<rule ccType="type" entityName="uart_tx_bfm" name="exclude"/>
+<rule ccType="type" entityName="uart_rx_bfm" name="exclude"/>
+<rule ccType="type" entityName="Uart_Checker" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/IIR/7" entityType="toggle-bit" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/IIR/6" entityType="toggle-bit" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/IIR/5" entityType="toggle-bit" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/IIR/4" entityType="toggle-bit" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/SCR" entityType="toggle" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/IRD" entityType="toggle" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/LCR/5" entityType="toggle-bit" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/RDD" entityType="toggle" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/WR_B/7" entityType="toggle-bit" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/WR_B/6" entityType="toggle-bit" metrics="toggle" name="exclude"/>
+<rule ccType="type" entityName="&quot;worklib.gh_uart_16550(a)&quot;/WR_B/5" entityType="toggle-bit" metrics="toggle" name="exclude"/>
+</rules>

@@ -1,0 +1,16 @@
+irun  \
+	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/testbench" \
+	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/generic" 	\
+	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/test_dir" 	\
+	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/assertion" 	\
+	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/coverage" 	\
+	../../design/Rev1.1/toplevel/gh_uart_16550_amba_apb_wrapper.vhd	\
+	../../design/Rev1.1/uart/*.vhd ../../testbench/topsim.sv 	\
+	-access +rwc -sv -v93 -input ncsim.tcl -shm_dyn_probe	\
+	-noassert -svseed 5678 -coverage all -covfile covfile.ccf -COVOVERWRITE
+	#-covfile covfile.ccf -COVOVERWRITE
+
+#imc -batch <<!
+#load cov_work/scope/test_sv100/
+
+#irun  -incdir "/home/arnabd/work/SV/UART_VERIFICATION/testbench" -incdir "/home/arnabd/work/SV/UART_VERIFICATION/generic" 	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/test_dir" 	../../design/toplevel/gh_uart_16550_amba_apb_wrapper.vhd	../../design/uart/*.vhd ../../testbench/testbench.sv -sv -v93 -input ncsim.tcl

@@ -1,0 +1,11 @@
+~/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/registers_gates/gh_register_ce.vhd
+ ~/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/registers_gates/gh_jkff.vhd
+/home/deepti/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/registers_gates/gh_DECODE_3to8.vhd
+/home/deepti/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/registers_gates/gh_shift_reg_PL_sl.vhd
+/home/deepti/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/registers_gates/gh_shift_reg_se_sl.vhd
+ ~/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/custom_MSI/gh_edge_det*.vhd 
+/home/deepti/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/custom_MSI/gh_baud_rate_gen.vhd
+/home/deepti/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/counters/gh_counter_*.vhd
+/home/deepti/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/custom_MSI/gh_parity_gen_Serial.vhd
+/home/deepti/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/custom_MSI/gh_binary2gray.vhd
+/home/deepti/Desktop/gh_vhdl_library/web_uploads/gh_vhdl_lib/custom_MSI/gh_gray2binary.vhd

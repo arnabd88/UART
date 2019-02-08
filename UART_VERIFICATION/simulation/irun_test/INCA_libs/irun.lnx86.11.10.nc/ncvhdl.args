@@ -1,0 +1,34 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-XLMODE
+./INCA_libs/irun.lnx86.11.10.nc
+-RUNMODE
+../../design/Rev1.1/toplevel/gh_uart_16550_amba_apb_wrapper.vhd
+../../design/Rev1.1/uart/gh_baud_rate_gen.vhd
+../../design/Rev1.1/uart/gh_binary2gray.vhd
+../../design/Rev1.1/uart/gh_counter_down_ce_ld_tc.vhd
+../../design/Rev1.1/uart/gh_counter_down_ce_ld.vhd
+../../design/Rev1.1/uart/gh_counter_integer_down.vhd
+../../design/Rev1.1/uart/gh_DECODE_3to8.vhd
+../../design/Rev1.1/uart/gh_edge_det.vhd
+../../design/Rev1.1/uart/gh_edge_det_XCD.vhd
+../../design/Rev1.1/uart/gh_fifo_async16_rcsr_wf.vhd
+../../design/Rev1.1/uart/gh_fifo_async16_sr.vhd
+../../design/Rev1.1/uart/gh_gray2binary.vhd
+../../design/Rev1.1/uart/gh_jkff.vhd
+../../design/Rev1.1/uart/gh_parity_gen_Serial.vhd
+../../design/Rev1.1/uart/gh_register_ce.vhd
+../../design/Rev1.1/uart/gh_shift_reg_PL_sl.vhd
+../../design/Rev1.1/uart/gh_shift_reg_se_sl.vhd
+../../design/Rev1.1/uart/gh_uart_16550.vhd
+../../design/Rev1.1/uart/gh_uart_Rx_8bit.vhd
+../../design/Rev1.1/uart/gh_uart_Tx_8bit.vhd
+-V93
+-CDSLIB
+./INCA_libs/irun.lnx86.11.10.nc/cdsrun.lib
+-HDLVAR
+./INCA_libs/irun.lnx86.11.10.nc/hdlrun.var
+-MESSAGES
+-UPDATE

@@ -1,0 +1,49 @@
+irun: 11.10-s058: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+TOOL:	irun	11.10-s058: Started on Mar 14, 2014 at 17:36:08 IST
+irun
+	-sv
+	singleton.sv
+Recompiling... reason: file './singleton.sv' is newer than expected.
+	expected: Fri Mar 14 17:45:20 2014
+	actual:   Fri Mar 14 17:47:47 2014
+file: singleton.sv
+	module worklib.test:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		$unit_0x6520c5e0
+		test
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.\$unit_0x6520c5e0 :compilation_unit <0x50573747>
+			streams:   0, words:     0
+		worklib.\$unit_0x6520c5e0 :compilation_unit <0x768f2567>
+			streams:   7, words:  2858
+		worklib.\$unit_0x6520c5e0 :compilation_unit <0x773562a3>
+			streams:  10, words:  5043
+		worklib.test:sv <0x0cbf7faa>
+			streams:   1, words:  2128
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                    Instances  Unique
+		Modules:                    1       1
+		Registers:                 14      15
+		Initial blocks:             1       1
+		Compilation units:          1       1
+		SV Class declarations:      2       2
+		SV Class specializations:   2       2
+	Writing initial simulation snapshot: worklib.test:sv
+Loading snapshot worklib.test:sv .................... Done
+ncsim> source /software/Cadence_tools/IUS111/tools/inca/files/ncsimrc
+ncsim> run
+OBJECT COUNT =           1                   0
+OBJECT COUNT =           1                   0
+UART Environment Already Alive !!
+OBJECT COUNT =           1                  10
+OBJECT COUNT =           1                  20
+OBJECT COUNT =           2                  30
+ncsim: *W,RNQUIE: Simulation is complete.
+ncsim> exit
+TOOL:	irun	11.10-s058: Exiting on Mar 14, 2014 at 17:36:08 IST  (total: 00:00:00)

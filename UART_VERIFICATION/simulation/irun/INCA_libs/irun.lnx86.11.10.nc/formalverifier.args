@@ -1,0 +1,12 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-INPUT
+ncsim.tcl
+-SVSEED
+5678
+-COVERAGE
+all
+-COVOVERWRITE
+-MESSAGES

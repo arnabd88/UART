@@ -1,0 +1,18 @@
+
+a. At reset assertion, IIR[0](pending interrupt) is enabled. After reset relase, at next posedge of BR_CLK IIR[0] is disabled.
+
+b. If sticky parity bit is set, ERROR bit is going 1. Expectation was, sticky parity bit should not have any implication in the design.
+
+c. reset value of Q0, Q1 in edge detect flop set to 0, which is triggering false status in delta fields of MSR just after reset.
+
+d. sTX toggling in loopback mode.
+
+e. FCR in DUT is reset to FCR_0 = 0;
+
+f. Modem outputs from MCR are disconnected in loopback mode.
+
+g. IIR reset to C0, should be C1;
+
+h. LSR interrupt bits behaviour is mysterious. Parity and framing error bit getting set together only and reflecting in ERROR bit. Also, break indicator is never set in status as well it doesn't reflects in IRQ and IIR.
+
+i. Timeout not getting detected.

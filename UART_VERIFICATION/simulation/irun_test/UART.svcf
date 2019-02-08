@@ -1,0 +1,139 @@
+# SimVision Command Script (Wed Apr 02 02:51:19 PM IST 2014)
+#
+# Version 11.10.s058
+#
+# You can restore this configuration with:
+#
+#     simvision -input /home/arnabd/work/SV/UART_VERIFICATION/simulation/irun/UART.svcf
+#
+
+
+#
+# Preferences
+#
+preferences set toolbar-SimControl-WatchList {
+  usual
+  hide set_break
+}
+preferences set txe-locate-add-fibers 1
+preferences set txe-navigate-search-locate 0
+preferences set txe-view-hold 0
+preferences set verilog-colors {Su #ff0099 0 {} 1 {} HiZ #ff9900 We #00ffff Pu #9900ff Sm #00ff99 X #ff0000 StrX #ff0000 other #ffff00 Z #ff9900 Me #0000ff La #ff00ff St {}}
+preferences set analog-height 4
+preferences set txe-navigate-waveform-locate 1
+preferences set txe-view-hidden 0
+preferences set txe-search-show-linenumbers 1
+preferences set toolbar-OperatingMode-WaveWindow {
+  usual
+  position -pos 3
+  name OperatingMode
+}
+preferences set plugin-enable-svdatabrowser 0
+preferences set analog-format constant
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 4
+}
+preferences set txe-navigate-waveform-next-child 1
+preferences set toolbar-TimeSearch-WatchList {
+  usual
+  shown 0
+}
+preferences set vhdl-colors {H #00ffff L #00ffff 0 {} X #ff0000 - {} 1 {} U #9900ff Z #ff9900 W #ff0000}
+preferences set txe-locate-scroll-x 1
+preferences set txe-locate-scroll-y 1
+preferences set txe-locate-pop-waveform 1
+
+#
+# Cursors
+#
+set time 0
+if {[catch {cursor new -name  TimeA -time $time}] != ""} {
+    cursor set -using TimeA -time $time
+}
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x976+0+25}] != ""} {
+    window geometry "Waveform 1" 1920x976+0+25
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ns \
+    -valuewidth 75
+cursor set -using TimeA -time 0
+waveform baseline set -time 0
+
+set id [waveform add -signals [subst  {
+	{[format {testbench.u_apb_intf.PRESETn}]}
+	{[format {testbench.u_apb_intf.PCLK}]}
+	{[format {testbench.u_apb_intf.PSEL}]}
+	{[format {testbench.u_apb_intf.PADDR[2:0]}]}
+	{[format {testbench.u_apb_intf.PWDATA[7:0]}]}
+	{[format {testbench.u_apb_intf.PRDATA[7:0]}]}
+	{[format {testbench.u_apb_intf.PWRITE}]}
+	{[format {testbench.u_duv:BR_clk}]}
+	{[format {testbench.u_duv:B_CLK}]}
+	{[format {testbench.u_monitor.RDL_ST}]}
+	{[format {testbench.u_uart_intf.sTX}]}
+	{[format {testbench.u_uart_intf.sRX}]}
+	{[format {testbench.u_uart_intf.IRQ}]}
+	{[format {testbench.diff_counter}]}
+	{[format {testbench.u_event_intf.test_num}]}
+	{[format {testbench.u_event_intf.clock_type}]}
+	{[format {testbench.u_event_intf.env_start}]}
+	{[format {testbench.u_event_intf.start_test}]}
+	{[format {testbench.u_event_intf.finish_test}]}
+	{[format {testbench.u_event_intf.start_transmit_frm_BFM}]}
+	{[format {testbench.u_duv:U1:LCR}]}
+	{[format {testbench.u_uart_checker.LCR_WIRE[7:0]}]}
+	{[format {testbench.u_duv:U1:LSR}]}
+	{[format {testbench.u_uart_checker.LSR_WIRE[7:0]}]}
+	{[format {testbench.u_duv:U1:FCR}]}
+	{[format {testbench.u_duv:U1:IIR}]}
+	{[format {testbench.u_uart_checker.IIR_WIRE[7:0]}]}
+	{[format {testbench.u_duv:U1:IER}]}
+	{[format {testbench.u_uart_checker.IER_WIRE[7:0]}]}
+	{[format {testbench.u_uart_checker.XMIT_TOP}]}
+	{[format {testbench.u_uart_checker.RCVR_TOP}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {testbench.u_uart_checker.regmap}]}
+	} ]]
+waveform format $id -trace reference
+set id [waveform add -signals [subst  {
+	{[format {testbench.u_uart_tx_bfm.tx_start}]}
+	{[format {testbench.u_uart_tx_bfm.CHARACTER_FRAME_TIME}]}
+	{[format {testbench.u_uart_tx_bfm.RCVR_SR[7:0]}]}
+	{[format {testbench.u_uart_tx_bfm.parity_error}]}
+	{[format {testbench.u_uart_rx_bfm.rx_start}]}
+	{[format {testbench.u_uart_rx_bfm.break_count}]}
+	{[format {testbench.u_uart_rx_bfm.trigger_value}]}
+	{[format {testbench.u_uart_rx_bfm.RCVR_SR[7:0]}]}
+	{[format {testbench.u_uart_rx_bfm.CHARACTER_FRAME_TIME}]}
+	} ]]
+
+waveform xview limits 0 66562900ns
+
+#
+# Waveform Window Links
+#
+

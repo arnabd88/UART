@@ -1,0 +1,9 @@
+irun  \
+	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/testbench" \
+	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/generic" 	\
+	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/test_dir" 	\
+	../../design/toplevel/gh_uart_16550_amba_apb_wrapper.vhd	\
+	../../design/uart/*.vhd ../../testbench/testbench.sv 	\
+	-sv -v93
+
+#irun  -incdir "/home/arnabd/work/SV/UART_VERIFICATION/testbench" -incdir "/home/arnabd/work/SV/UART_VERIFICATION/generic" 	-incdir "/home/arnabd/work/SV/UART_VERIFICATION/test_dir" 	../../design/toplevel/gh_uart_16550_amba_apb_wrapper.vhd	../../design/uart/*.vhd ../../testbench/top.sv -sv -v93 

@@ -1,0 +1,15 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-INCDIR
+/home/arnabd/work/SV/UART_VERIFICATION/testbench
+-INCDIR
+/home/arnabd/work/SV/UART_VERIFICATION/generic
+-INCDIR
+/home/arnabd/work/SV/UART_VERIFICATION/test_dir
+-INCDIR
+/home/arnabd/work/SV/UART_VERIFICATION/assertion
+-INCDIR
+/home/arnabd/work/SV/UART_VERIFICATION/coverage
+-sv

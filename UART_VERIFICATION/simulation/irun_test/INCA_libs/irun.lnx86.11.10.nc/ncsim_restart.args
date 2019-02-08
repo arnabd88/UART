@@ -1,0 +1,29 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-INPUT
+ncsim.tcl
+-SHM_DYN_PROBE
+-SVSEED
+5678
+-COVOVERWRITE
+-MESSAGES
++EMGRLOG
+irun.log
+-XLSTIME
+1398417840
+-XLKEEP
+-XLMODE
+./INCA_libs/irun.lnx86.11.10.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx86.11.10.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx86.11.10.nc/hdl.var
+-XLNAME
+irun
+-XLVERSION
+"TOOL:	irun	11.10-s058"
+-XLNAME
+./INCA_libs/irun.lnx86.11.10.nc/blrwks32.blr.interrasystems.com_12655

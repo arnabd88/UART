@@ -1,0 +1,23 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-ACCESS
++rwc
+-V93
+-NOASSERT
+-COVERAGE
+all
+-COVFILE
+covfile.ccf
+-MESSAGES
+-XLMODE
+./INCA_libs/irun.lnx86.11.10.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx86.11.10.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx86.11.10.nc/hdl.var
+-WORK
+worklib
+-HASXLMODE

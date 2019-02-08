@@ -1,0 +1,32 @@
+
+Debanjan
+========
+    a. Structure out how we plan to share data amongst us,i.e., workaround for check-ins.
+    b. Finc out a way to generate random values within a given range with the cosntraint that no random value repeats itself un			less all have been exhausted.
+  **c. Build a fifo model, in verilog or using structure or class.Provide the externally accessible properties and methods. 
+		Would prefer a structure or a class.
+    d. Go through the "MESSAGE" package, find out how to use it, add features if needed.
+  **e. create a full testcase as per VP for implementation using the standard template framework(Take any, better to take the 
+		most complex).
+  **f. Plan out a script, that will read a configuration file . The script needs to do the following
+    		- read the configuration file which will contain the testcase names and their corresponding ifdefs, some irun 
+    		  adjustable configurations, under exclusive headers.
+    		- needs to update the "uart_test.sv" depending on the configuration file.
+    		- invoke irun based on provided configurations.
+    
+    g. Find out scenarios in the framework wherein the user needs to delve in any environmental structures. We need to remove
+		those dependencies. The user is expected to have access to only self made testcase class, and the items passed in its 
+		new functions.
+  **h. Any inclusion dependecies of the testcase, needs to be diverted to the configuration file and should be script populated.
+    i. Find out a way wherein we can create a structured storing for success and failures, and at simulation end yank out the 
+		data to the final log file, so that in the log file we have a strured portion at the end providing concrete 
+		information of the pass/fail.
+
+Arnab
+=====
+a. Modify regmap.
+b. Create the BFM models. the fifo's get initiated from c.
+c. Monitor and checker developement.
+
+d. Need to check that if receiver FIFO is empty, none of the receiver line
+status signals should get set	.

@@ -1,0 +1,28 @@
+ncvlog: 11.10-s058: (c) Copyright 1995-2012 Cadence Design Systems, Inc.
+`include "uart_defines.sv"
+                         |
+ncvlog: *E,COFILX (../../testbench/testbench.sv,5|25): cannot open include file 'uart_defines.sv'.
+`include "stimulus.sv"
+                     |
+ncvlog: *E,COFILX (../../testbench/testbench.sv,6|21): cannot open include file 'stimulus.sv'.
+`include "apb_interface.sv"
+                          |
+ncvlog: *E,COFILX (../../testbench/testbench.sv,7|26): cannot open include file 'apb_interface.sv'.
+`include "uart_interface.sv"
+                           |
+ncvlog: *E,COFILX (../../testbench/testbench.sv,8|27): cannot open include file 'uart_interface.sv'.
+`include "event_interface.sv"
+                            |
+ncvlog: *E,COFILX (../../testbench/testbench.sv,9|28): cannot open include file 'event_interface.sv'.
+`include "generator.sv"
+                      |
+ncvlog: *E,COFILX (../../testbench/testbench.sv,10|22): cannot open include file 'generator.sv'.
+`include "generic_test.sv"
+                         |
+ncvlog: *E,COFILX (../../testbench/testbench.sv,11|25): cannot open include file 'generic_test.sv'.
+`include "apb_driver.sv"
+                       |
+ncvlog: *E,COFILX (../../testbench/testbench.sv,12|23): cannot open include file 'apb_driver.sv'.
+mailbox #(Stimulus) mbx;
+                 |
+ncvlog: *E,SVNOTY (../../testbench/testbench.sv,25|17): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.

@@ -1,0 +1,11 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-ACCESS
++rwc
+-NOASSERT
+-COVERAGE
+all
+-COVFILE
+covfile.ccf

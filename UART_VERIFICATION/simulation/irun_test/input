@@ -1,0 +1,17 @@
+============DEFINES========================
+
+ABC yu 
+xBC yu 
+
+
+============TEST CASES====================
+
+uart_frame_transmit
+uart_loopback
+uart_modem_control
+uart_timeout_test
+uart_mode0
+uart_THRE_interrupt_test
+
+============PARAMETERS====================
+

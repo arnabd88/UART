@@ -1,0 +1,255 @@
+csi-ncvlog - CSI: Command line:
+ncvlog
+    -f /home/arnabd/work/SV/UART_VERIFICATION/simulation/irun/INCA_libs/irun.lnx86.11.10.nc/ncvlog.args
+        -XLMODE ./INCA_libs/irun.lnx86.11.10.nc
+        -RUNMODE
+        -INCDIR /home/arnabd/work/SV/UART_VERIFICATION/testbench
+        -INCDIR /home/arnabd/work/SV/UART_VERIFICATION/generic
+        -INCDIR /home/arnabd/work/SV/UART_VERIFICATION/test_dir
+        -INCDIR /home/arnabd/work/SV/UART_VERIFICATION/assertion
+        ../../testbench/testbench.sv
+        -sv
+        -CDSLIB ./INCA_libs/irun.lnx86.11.10.nc/cdsrun.lib
+        -HDLVAR ./INCA_libs/irun.lnx86.11.10.nc/hdlrun.var
+        -MESSAGES
+        -UPDATE
+        -XLLIBSTORE ./INCA_libs/irun.lnx86.11.10.nc/xllibs
+        -ALLOWUNBOUND
+    -CHECK_VERSION TOOL:	irun	11.10-s058
+    -LOG_FD 4
+
+csi-ncvlog - CSI: *F,INTERR: INTERNAL EXCEPTION
+-----------------------------------------------------------------
+The tool has encountered an unexpected condition and must exit.
+Contact Cadence Design Systems customer support about this
+problem and provide enough information to help us reproduce it,
+including the logfile that contains this error message.
+  TOOL:	ncvlog	11.10-s058
+  HOSTNAME: blrwks32.blr.interrasystems.com
+  OPERATING SYSTEM: Linux 2.6.18-274.el5 #1 SMP Fri Jul 8 17:39:55 EDT 2011 i686
+  MESSAGE: $unit reference into unsupported scope
+-----------------------------------------------------------------
+
+csi-ncvlog - CSI: Cadence Support Investigation, recording details
+Verilog Syntax Tree: compilation unit declaration (VST_D_COMP_UNIT) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 2, position 8
+	Scope: $unit_0x702d8084
+	Decompile: $unit_0x702d8084#(TEST_TIMEOUT,RSTH_DELAY,POR_DELAY,RBT_NUM_CLK,HARD_NUM_CLK,SOFT_NUM_CLK,ADDR_OFFSET_WIDTH,ADDR_WIDTH,DATA_WIDTH,BYTE_LANES,BYTE_EN_VAL,START_DELAY,BAUD_SAMPLE_CYCLES,CLK1_50_L,CLK1_75_L,CLK1_110_L,CLK1_134_5_L,CLK1_150_L,CLK1_300_L,CLK1_6/home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv
+	Source  : module monitor (
+	Position:         ^
+Verilog Syntax Tree: root (VST_ROOT) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 2, position 8
+	Decompile: $unit_0x702d8084#(TEST_TIMEOUT,RSTH_DELAY,POR_DELAY,RBT_NUM_CLK,HARD_NUM_CLK,SOFT_NUM_CLK,ADDR_OFFSET_WIDTH,ADDR_WIDTH,DATA_WIDTH,BYTE_LANES,BYTE_EN_VAL,START_DELAY,BAUD_SAMPLE_CYCLES,CLK1_50_L,CLK1_75_L,CLK1_110_L,CLK1_134_5_L,CLK1_150_L,CLK1_300_L,CLK1_6/home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv
+	Source  : module monitor (
+	Position:         ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/uart_regmap.sv, line 109, position 19
+	Scope: $unit_0x702d8084::uart_Regmap::new
+	Decompile: new
+	Source  :         function new();
+	Position:                    ^
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	Decompile: new
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	Decompile: uart_Regmap
+Intermediate File: root (IF_ROOT) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+Verilog Syntax Tree: parameter declaration (VST_D_PARAMETER) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/uart_defines.sv, line 376, position 16
+	Scope: $unit_0x702d8084
+	Decompile: unspecified MCR_DTR
+	Source  : parameter MCR_DTR 			=		8'h01;
+	Position:                 ^
+Verilog Syntax Tree: root (VST_ROOT) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 2, position 5
+	Decompile: monitor
+	Source  : module monitor (
+	Position:      ^
+Verilog Syntax Tree: module declaration (VST_D_MODULE) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 2, position 13
+	Scope: monitor
+	Decompile: monitor
+	Source  : module monitor (
+	Position:              ^
+Intermediate File: string (IF_STRING) in module worklib.monitor:sv (VST)
+	Decompile: worklib
+Intermediate File: string (IF_STRING) in module worklib.monitor:sv (VST)
+	Decompile: sv
+Intermediate File: string (IF_STRING) in module worklib.monitor:sv (VST)
+	Decompile: monitor
+Verilog Syntax Tree: super class referral (VST_R_SUPER) in module worklib.monitor:sv (VST)
+	Scope: $unit_0x702d8084::Generic_RegBase
+	Decompile: bit reg_val
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/generic/generic_regbase.sv, line 9, position 46
+	Scope: $unit_0x702d8084::Generic_RegBase
+	Decompile: bit reg_val
+	Source  :         bit           [DATA_WIDTH-1:0]  reg_val;          // Data in the register
+	Position:                                               ^
+Verilog Syntax Tree: indexed vector type (VST_T_INDEXED_VEC) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	Decompile: int
+Verilog Syntax Tree: indexed vector type (VST_T_INDEXED_VEC) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	Scope: $unit_0x702d8084::Generic_RegBase
+	Decompile: bit
+Verilog Syntax Tree: bit type (VST_T_BIT) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	Decompile: bit
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/uart_regmap.sv, line 17, position 14
+	Scope: $unit_0x702d8084::uart_Regmap
+	Decompile: $unit_0x702d8084::LCR_Reg
+	Source  :         LCR_Reg lcr_reg;
+	Position:               ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/uart_registers.sv, line 254, position 12
+	Scope: $unit_0x702d8084::LCR_Reg
+	Decompile: $unit_0x702d8084::LCR_Reg
+	Source  : class LCR_Reg extends Generic_RegBase;
+	Position:             ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 185, position 18
+	Scope: monitor.check_timeout
+	Decompile: check_timeout
+	Source  : 	task check_timeout();
+	Position: 	                 ^
+Verilog Syntax Tree: type definition declaration (VST_D_TYPEDEF) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/uart_regmap.sv, line 12, position 16
+	Scope: $unit_0x702d8084
+	Decompile: $unit_0x702d8084::uart_Regmap uart_Regmap
+	Source  : class uart_Regmap extends Generic_Regmap;
+	Position:                 ^
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/uart_regmap.sv, line 28, position 14
+	Scope: $unit_0x702d8084::uart_Regmap
+	Decompile: $unit_0x702d8084::RCVR_FIFO_Reg
+	Source  : 		RCVR_FIFO_Reg	rcvr_fifo_reg;
+	Position: 		            ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 17, position 19
+	Scope: monitor
+	Decompile: int hold_fifo_count
+	Source  : 	int hold_fifo_count	;
+	Position: 	                  ^
+Verilog Syntax Tree: indexed vector type (VST_T_INDEXED_VEC) in module worklib.monitor:sv (VST)
+	Decompile: int
+Intermediate File: root (IF_ROOT) in module worklib.monitor:sv (VST)
+Verilog Syntax Tree: unknown expression (VST_E_UNKNOWN) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 188, position 32
+	Scope: monitor.check_timeout
+	Decompile: u_uart_intf.uart_intf_rx_pos
+	Source  : 			@(u_uart_intf.uart_intf_rx_pos)	;
+	Position: 			                             ^
+Verilog Syntax Tree: always statement declaration (VST_D_ALWAYS_STMT) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 177, position 6
+	Scope: monitor
+	Source  : 	always@(RDL_ST)	begin
+	Position: 	     ^
+Intermediate File: string (IF_STRING) in module worklib.monitor:sv (VST)
+	Decompile: check_timeout
+Verilog Syntax Tree: register declaration (VST_D_REG) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 20, position 10
+	Scope: monitor
+	Decompile: reg RDL_ST
+	Source  : 	reg	RDL_ST	;
+	Position: 	   	     ^
+Verilog Syntax Tree: event control expression (VST_E_EVENT_CONTROL) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 177, position 7
+	Scope: monitor
+	Decompile: @<>
+	Source  : 	always@(RDL_ST)	begin
+	Position: 	      ^
+Verilog Syntax Tree: blocking assignment statement (VST_S_BLOCKING_ASSIGNMENT) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 193, position 11
+	Scope: monitor.check_timeout
+	Decompile: 1'b1
+	Source  : 		`TIMEOUT	=	1'b1	;
+	Position: 		        	^
+Verilog Syntax Tree: register declaration (VST_D_REG) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 87, position 8
+	Scope: monitor.compare_reg_data
+	Decompile: reg PASS
+	Source  : 	reg PASS;
+	Position: 	       ^
+Verilog Syntax Tree: sequential block statement (VST_S_SEQ_BLOCK) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 187, position 7
+	Scope: monitor.check_timeout
+	Source  : 		repeat((4*`CHAR_LENGTH) * 16 ) begin
+	Position: 		     ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 177, position 14
+	Scope: monitor
+	Decompile: RDL_ST
+	Source  : 	always@(RDL_ST)	begin
+	Position: 	             ^
+Verilog Syntax Tree: number expression (VST_E_NUMBER) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 193, position 13
+	Decompile: 1'b1
+	Source  : 		`TIMEOUT	=	1'b1	;
+	Position: 		        	 	^
+Verilog Syntax Tree: logic type (VST_T_LOGIC) in module worklib.monitor:sv (VST)
+	Decompile: reg
+Verilog Syntax Tree: part select expression (VST_E_PART_SELECT) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 193, position 9
+	Scope: $unit_0x702d8084::Generic_RegBase
+	Decompile: regmap.iir_reg.reg_val[3:3]
+	Source  : 		`TIMEOUT	=	1'b1	;
+	Position: 		       ^
+Verilog Syntax Tree: number expression (VST_E_NUMBER) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 193, position 9
+	Decompile: 3
+	Source  : 		`TIMEOUT	=	1'b1	;
+	Position: 		       ^
+Verilog Syntax Tree: class select expression (VST_E_CLASS_SELECT) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 193, position 9
+	Scope: $unit_0x702d8084::Generic_RegBase
+	Decompile: regmap.iir_reg.reg_val
+	Source  : 		`TIMEOUT	=	1'b1	;
+	Position: 		       ^
+Verilog Syntax Tree: number expression (VST_E_NUMBER) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/generic/generic_regbase.sv, line 9, position 34
+	Decompile: 1
+	Source  :         bit           [DATA_WIDTH-1:0]  reg_val;          // Data in the register
+	Position:                                   ^
+Verilog Syntax Tree: referral into class (VST_R_INTO_CLASS) in module worklib.monitor:sv (VST)
+	Scope: $unit_0x702d8084::uart_Regmap
+	Decompile: $unit_0x702d8084::uart_Regmap
+Verilog Syntax Tree: symbolic referral (VST_R_SYMBOLIC) in module worklib.monitor:sv (VST)
+	Scope: $unit_0x702d8084::Generic_RegBase
+	Decompile: bit reg_val
+Verilog Syntax Tree: symbolic referral (VST_R_SYMBOLIC) in module worklib.monitor:sv (VST)
+	Scope: $unit_0x702d8084::uart_Regmap
+	Decompile: $unit_0x702d8084::IIR_Reg iir_reg
+Verilog Syntax Tree: class select expression (VST_E_CLASS_SELECT) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 193, position 9
+	Scope: $unit_0x702d8084::uart_Regmap
+	Decompile: regmap.iir_reg
+	Source  : 		`TIMEOUT	=	1'b1	;
+	Position: 		       ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x702d8084 :compilation_unit (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/uart_regmap.sv, line 12, position 16
+	Scope: $unit_0x702d8084::uart_Regmap
+	Decompile: $unit_0x702d8084::uart_Regmap
+	Source  : class uart_Regmap extends Generic_Regmap;
+	Position:                 ^
+Verilog Syntax Tree: compilation unit referral (VST_R_COMP_UNIT) in module worklib.monitor:sv (VST)
+	Scope: $unit_0x702d8084
+	Decompile: $unit_0x702d8084::uart_Regmap uart_Regmap
+Verilog Syntax Tree: if statement (VST_S_IF) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 189, position 4
+	Scope: monitor.check_timeout
+	Decompile: (regmap.rcvr_fifo_reg.rcvr_fifo_top >= hold_fifo_count)
+	Source  : 			if(`RCVR_FIFO_TOP	>=	hold_fifo_count) ;
+	Position: 			 ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 189, position 38
+	Scope: monitor
+	Decompile: hold_fifo_count
+	Source  : 			if(`RCVR_FIFO_TOP	>=	hold_fifo_count) ;
+	Position: 			                 	  	              ^
+Verilog Syntax Tree: sfilea (VST_SFILEA) in module worklib.monitor:sv (VST)
+	Decompile: unable to decompile type 680
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in module worklib.monitor:sv (VST)
+	File: /home/arnabd/work/SV/UART_VERIFICATION/testbench/monitor.sv, line 190, position 28
+	Scope: monitor
+	Decompile: check_timeout
+	Source  : 			else disable check_timeout;
+	Position: 			                         ^
+csi-ncvlog - CSI: investigation complete took 0.065 secs, send this file to Cadence Support

@@ -1,0 +1,134 @@
+///////////////////////////////////////////////////////////////////////////
+//
+//	Coverage Intent : to check toggle of each bit data write to registers
+//
+//
+//////////////////////////////////////////////////////////////////////////
+
+	covergroup cg_adr;
+		cover_wr_adr	  : coverpoint u_apb_intf.PADDR {
+				bins wr_addr_val	=	{XMIT_FIFO_ADDR, LCR_ADDR, FCR_ADDR, MCR_ADDR, IER_ADDR};
+			}
+		cover_rd_adr	  : coverpoint u_apb_intf.PADDR {
+				bins rd_addr_val	=	{LSR_ADDR, IIR_ADDR, MSR_ADDR};
+			}
+		cover_d	  	  : coverpoint u_apb_intf.PWDATA {
+				wildcard bins data_7_1 = {8'b1???????};
+				wildcard bins data_7_0 = {8'b0???????};
+				wildcard bins data_6_1 = {8'b?1??????};
+				wildcard bins data_6_0 = {8'b?0??????};
+				wildcard bins data_5_1 = {8'b??1?????};
+				wildcard bins data_5_0 = {8'b??0?????};
+				wildcard bins data_4_1 = {8'b???1????};
+				wildcard bins data_4_0 = {8'b???0????};
+				wildcard bins data_3_1 = {8'b????1???};
+				wildcard bins data_3_0 = {8'b????0???};
+				wildcard bins data_2_1 = {8'b?????1??};
+				wildcard bins data_2_0 = {8'b?????0??};
+				wildcard bins data_1_1 = {8'b??????1?};
+				wildcard bins data_1_0 = {8'b??????0?};
+				wildcard bins data_0_1 = {8'b???????1};
+				wildcard bins data_0_0 = {8'b???????0};
+			}
+		cover_we	  : coverpoint u_apb_intf.PWRITE;
+		cover_psel	  : coverpoint u_apb_intf.PSEL {
+				bins sel = {1'b1};
+			}
+		cross_wr_adr_d	  : cross cover_wr_adr,cover_d, cover_we, cover_psel;
+		cross_rd_adr_d	  : cross cover_rd_adr,cover_d, cover_we, cover_psel;
+	//	cross_d_we	  : cross cover_d,cover_we;
+	//	cross_we_adr  : cross cover_we,cover_adr;
+	endgroup
+
+
+	covergroup LSR_INTR_seq;
+		cover_seq		:	coverpoint u_apb_intf.PADDR
+			{
+				bins trans	=	(LCR_ADDR =>  IER_ADDR	=> FCR_ADDR => IIR_ADDR => LSR_ADDR);
+			}
+
+	endgroup
+
+	covergroup cg_MODE0;
+		cover_fcr		:	coverpoint u_apb_intf.PADDR	
+			{
+				bins check	=	{FCR_ADDR}	;
+			}
+		cover_mode_set	:	coverpoint	u_apb_intf.PWDATA[3]	{
+				bins check	=	{1'b1,1'b0}	;
+			}
+		cover_write_en	:	coverpoint	u_apb_intf.PWRITE	{
+				bins check	=	{1'b1}	;
+			}
+		cover_psel		:	coverpoint	u_apb_intf.PSEL		{
+				bins check	=	{1'b1}	;
+			}
+
+		cross_MODE0		:	cross cover_fcr, cover_mode_set, cover_write_en, cover_psel;
+	endgroup
+
+	covergroup cg_xmit_fifo;
+		cover_xmit		: coverpoint `XMIT_FIFO_TOP	{
+				bins xmit_fifo_cov[]	=	{[-1:15]};
+		}
+	endgroup
+
+
+	covergroup cg_rcvr_fifo;
+		cover_rcvr		: coverpoint `RCVR_FIFO_TOP	{
+				bins rcvr_fifo_cov[]	=	{[-1:15]};
+		}
+	endgroup
+
+	covergroup cg_intr;
+		cover_intr		:	coverpoint `ID_INT	{
+				bins intr_val_cov		=	{2'b00, 2'b01, 2'b10, 2'b11};
+		}
+	endgroup
+
+	covergroup cg_intr_seq;
+
+		cover_seq		:	coverpoint `ID_INT	{
+				bins intr_seq1[]		=	(2'b10,2'b01,2'b00 => 2'b11);
+				bins intr_seq2[]		=	(2'b01,2'b00 => 2'b10);
+				bins intr_seq3[]		=	(2'b00 => 2'b01);
+
+				bins intr_seq4[]		=	(2'b11 => 2'b10,2'b01,2'b00);
+				bins intr_seq5[]		=	(2'b10 => 2'b01, 2'b00);
+				bins intr_seq6[]		=	(2'b01 => 2'b00);
+		}
+	endgroup
+
+	covergroup cg_timeout_seq;
+
+		cover_seq		:	coverpoint `IIR[3:1]	{
+				bins timeout_seq1		=	(3'b010	=>	3'b110);
+				bins timeout_seq2		=	(3'b110	=>	3'b000);
+				bins timeout_seq3		=	(3'b110	=>	3'b010);
+		}
+	endgroup
+
+
+
+
+				
+
+
+
+			cg_adr					u_cg_adr			=	new();
+
+			cg_MODE0				u_cg_MODE0			=	new();
+
+			LSR_INTR_seq 			u_LSR_INTR_seq		=	new();
+
+			cg_xmit_fifo			u_cg_xmit			=	new();
+
+			cg_rcvr_fifo			u_cg_rcvr			=	new();
+
+			cg_intr					u_cg_intr			=	new();
+
+			cg_intr_seq				u_cg_intr_seq		=	new();
+
+			cg_timeout_seq			u_cg_timeout_seq	=	new();
+
+
